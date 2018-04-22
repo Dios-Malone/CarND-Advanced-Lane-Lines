@@ -44,7 +44,7 @@ I start by preparing "object points", which will be the (x, y, z) coordinates of
 
 I then used the output `objpoints` and `imgpoints` to compute the camera calibration and distortion coefficients using the `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()` function and obtained this result: 
 
-![undistort_img][./output_images/undistort.PNG]
+![undistort_img](./output_images/undistort.PNG)
 
 ### Pipeline (single images)
 
@@ -54,16 +54,16 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 ![distort_img][./test_images/test3.jpg]
 
 After applying undistortion, it looks like:
-![distort_img][./output_images/undistorted_img.png]
+![distort_img](./output_images/undistorted_img.png)
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
 I tired multiple methods of thresholding including both color and gradient thresholds and comparing their results as following:
-![comparison][./output_images/threshold_compare.PNG]
+![comparison](./output_images/threshold_compare.PNG)
 
 After comparison, I chose a combination of color and gradient thresholds to generate a binary image (thresholding steps at code cell 7-9 in `./main.ipynb`).  Here's an example of my output for this step.  (note: this is not actually from one of the test images)
 
-![threshold_img][./output_images/threshold_img.png]
+![threshold_img](./output_images/threshold_img.png)
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
@@ -85,14 +85,14 @@ This resulted in the following source and destination points:
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
-![point_img][./output_images/point_img.png]
-![threshold_img][./output_images/transformed_img.png]
+![point_img](./output_images/point_img.png)
+![threshold_img](./output_images/transformed_img.png)
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
 I found out base x value of left and right lane pixels by searching the peaks of its histogram (code cell 11 in the IPython notebook) and used slide window to detect all pixels of the 2 lanes. Afterwards, function `polyfit()` from `numpy` was used to fit the lane lines with a 2nd order polynomial (code cell 12 - 17 in the IPython notebook) like this:
 
-![poly_lines][./output_images/poly_lines.png]
+![poly_lines](./output_images/poly_lines.png)
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
@@ -102,7 +102,7 @@ I did this in code cell 23 - 27 in the IPython notebook. I just simply applied t
 
 I implemented this step in code cell 20 through 22 in my code in `main.ipynb` in the function `warp_lane_back()` and `add_overlay()`.  Here is an example of my result on a test image:
 
-![lane_overlay][./output_images/color_result.png]
+![lane_overlay](./output_images/color_result.png)
 
 ---
 
