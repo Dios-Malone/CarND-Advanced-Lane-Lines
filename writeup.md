@@ -51,7 +51,7 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 #### 1. Provide an example of a distortion-corrected image.
 
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
-![distort_img][./test_images/test3.jpg]
+![distort_img](./test_images/test3.jpg)
 
 After applying undistortion, it looks like:
 ![distort_img](./output_images/undistorted_img.png)
@@ -102,7 +102,7 @@ I did this in code cell 23 - 27 in the IPython notebook. I just simply applied t
 
 I implemented this step in code cell 20 through 22 in my code in `main.ipynb` in the function `warp_lane_back()` and `add_overlay()`.  Here is an example of my result on a test image:
 
-![lane_overlay](./output_images/color_result.png)
+![lane_overlay](./output_images/lane_overlay.png)
 
 ---
 
