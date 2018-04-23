@@ -119,3 +119,5 @@ Here's a [link to my video result](./project_video_result.mp4)
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
 I think my pipeline may fail when there are very sharp turns, because the sliding window method seems assume the lanes are mostly vertical. And also I think the thresholding method may not work very well when there are complicated shadow patterns on the road (like in the forest).
+
+For further improvements, I think more sophisticated thresholding method can be used for difficult shadow patterns. More videos taken from different road condition can be used to tune the parameters to make it more robust. And we may need better smoothing to handle the bad cases in which the lane can't be detected. 
